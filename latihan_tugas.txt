@@ -1,2 +1,2 @@
-ini adalah file untuk tugas
-dan tugas kali ini yaitu melakukan forking, contribute dan pull requst di github
+ini adalah file untuk membuat tugas 
+dan tugas nya melakukan forking, contribute dan pull requst di github
