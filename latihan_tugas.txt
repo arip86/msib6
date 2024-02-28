@@ -1,1 +1,2 @@
-ini adalah file untuk utgas
+ini adalah file untuk tugas
+dan tugas kali ini yaitu melakukan forking, contribute dan pull requst di github
