@@ -1,0 +1,11 @@
+Untuk tugas 1 pada materi git
+Qunita Afif Mirror Khusnul
+Universitas 17 Agustus 1945 Surabaya
+Kelommpok 3
+
+Materi MSIB 6
+- HTML dan CSS
+- JavaScript
+- MySQL dan Database
+- PHP
+- Rest API
