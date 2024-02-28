@@ -1,0 +1,11 @@
+- Modul Studi Independen
+- Database MySQL/Maria DB
+- Desain Web 
+- Framework Laravel 
+- Pemrograman Javascript
+- Pemrograman PHP 
+- REST API 
+- Soft Skill
+- UI/UX
+- Version Control System (VCS) : Git/Github
+- Project
