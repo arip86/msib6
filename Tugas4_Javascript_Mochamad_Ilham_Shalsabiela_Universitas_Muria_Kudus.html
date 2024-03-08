@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Pegawai</title>
+<style>
+    /* CSS untuk membuat tabel berada di tengah halaman, garis tabel berwarna merah, dan teks di tengah untuk elemen <th> */
+    body, html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 50%;
+        margin-top: 20px;
+        border: 2px solid red; /* warna merah pada garis tabel */
+    }
+
+    th, td {
+        border: 1px solid red; /* warna merah pada garis tabel */
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: yellow;
+        text-align: center; /* teks di tengah untuk elemen <th> */
+    }
+
+    tfoot td {
+        text-align: right;
+    }
+</style>
+</head>
+<body>
+<script>
+    let namaPegawai = "Ridwan";
+    let jabatan = "Manager";
+    let status = "menikah";
+
+    // Gaji Pokok(if): Manager=>15 jt, Asisten Manager=>10 jt, Staff=>5 jt
+    let gajiPokok = 0;
+    switch (jabatan) {
+        case 'Manager':
+            gajiPokok = 15000000;
+            break;
+        case 'Asisten Manager':
+            gajiPokok = 10000000;
+            break;
+        case 'Staff':
+            gajiPokok = 5000000;
+            break;
+        default:
+            gajiPokok = 0;
+    }
+
+    let tunjanganJabatan = 0.15 * gajiPokok;
+    let bpjs = 0.10 * gajiPokok;
+    let tunjanganKeluarga = (status === 'menikah') ? 0.20 * gajiPokok : 0;
+    let totalGaji = gajiPokok + tunjanganJabatan + bpjs + tunjanganKeluarga;
+
+    document.write("<table>");
+    document.write("<thead>");
+    document.write("<tr><th colspan='8'>Total Gaji</th></tr>"); /* menambahkan colspan='8' agar <th> mengambil 8 kolom */
+    document.write("<tr><th>Nama Pegawai</th><th>Jabatan</th><th>Status</th><th>Gaji Pokok</th><th>Tunjangan Jabatan</th><th>BPJS</th><th>Tunjangan Keluarga</th><th>Total Gaji</th></tr>");
+    document.write("</thead>");
+    document.write("<tbody>");
+    document.write("<tr>");
+    document.write("<td>" + namaPegawai + "</td>");
+    document.write("<td>" + jabatan + "</td>");
+    document.write("<td>" + status + "</td>");
+    document.write("<td>" + gajiPokok + "</td>");
+    document.write("<td>" + tunjanganJabatan + "</td>");
+    document.write("<td>" + bpjs + "</td>");
+    document.write("<td>" + tunjanganKeluarga + "</td>");
+    document.write("<td>" + totalGaji + "</td>");
+    document.write("</tr>");
+    document.write("</tbody>");
+    if (status === 'menikah') {
+        document.write("<tfoot><tr><td colspan='7'>Total Gaji</td><td>" + totalGaji + "</td></tr></tfoot>");
+    }
+    document.write("</table>");
+</script>
+</body>
+</html>
