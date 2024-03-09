@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8" />
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0" />
+        <title> Tugas 1 JavaScript Data Pegawai </title>
+    </head>
+    <body>
+        <table border = "1" width = "100%">
+            <thead>
+                <tr>
+                    <th> Nama Pegawai </th>
+                    <th> Jabatan </th>
+                    <th> Status </th>
+                    <th> Gaji Pokok </th>
+                    <th> Tunjangan Jabatan </th>
+                    <th> BPJS </th>
+                    <th> Tunjangan Keluarga </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id = "nama"> Ridwan </td>
+                    <td id = "jabatan"> Manager </td>
+                    <td id = "status"> Menikah </td>
+                    <td id = "gajiPokok"> </td>
+                    <td id = "tunjanganJabatan"> </td>
+                    <td id = "bpjs"> </td>
+                    <td id = "tunjanganKeluarga"> </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th> Total Gaji </th>
+                    <td colspan = "7" id = "totalGaji"> </td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <script>
+            var gajiPokok;
+            var tunjanganJabatan;
+            var bpjs;
+            var tunjanganKeluarga;
+            var totalGaji;
+
+            switch (document.getElementById("jabatan").innerText) {
+                case "Manager":
+                    gajiPokok = 15000000;
+                    break;
+                case "Asisten Manager":
+                    gajiPokok = 10000000;
+                    break;
+                case "Staff":
+                    gajiPokok = 5000000;
+                    break;
+            }
+
+            tunjanganJabatan = 0.15 * gajiPokok;
+            bpjs = 0.1 * gajiPokok;
+            tunjanganKeluarga = document.getElementById("status").innerText === "Menikah" ? 0.2 * gajiPokok : 0;
+
+            totalGaji = gajiPokok + tunjanganJabatan + bpjs + tunjanganKeluarga;
+
+            document.getElementById("gajiPokok").innerText = gajiPokok;
+            document.getElementById("tunjanganJabatan").innerText = tunjanganJabatan;
+            document.getElementById("bpjs").innerText = bpjs;
+            document.getElementById("tunjanganKeluarga").innerText = tunjanganKeluarga;
+            document.getElementById("totalGaji").innerText = totalGaji;
+        </script>
+    </body>
+</html>
