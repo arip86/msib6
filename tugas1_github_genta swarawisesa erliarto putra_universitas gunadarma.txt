@@ -1,0 +1,6 @@
+Tugas Hari ini 
+1. Screenshoot akun github 
+2. Lakukan forking pada repo berikut https://github.com/arip86/msib6
+3. Tambahkan file pada repo tersebut dan lakukan contribute serta pull request
+
+ini adalah tugas yang saya kerjakan pada hari ini yaitu tugas 1 materi github
