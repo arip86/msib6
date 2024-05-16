@@ -3,22 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Produk;
-use App\Models\JenisProduk;
-use DB;
+use App\Models\Kartu;
+use App\Models\Pelanggan;
 
-class ProdukController extends Controller
+class PelangganController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        // index untuk produk
-        $produk = Produk::join('jenis_produk', 'jenis_produk_id', '=', 'jenis_produk.id')
-        ->select('produk.*', 'jenis_produk.nama as jenis')
-        ->get();
-        return view ('admin.produk.index', compact('produk'));
+        //
+        $pelanggan = Pelanggan::all();
+        return view ('admin.pelanggan.index', compact('pelanggan'));
     }
 
     /**
@@ -27,8 +24,6 @@ class ProdukController extends Controller
     public function create()
     {
         //
-        $jenis_produk = DB::table('jenis_produk')->get();
-        return view('admin.produk.create', compact('jenis_produk'));
     }
 
     /**
@@ -36,17 +31,7 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
-        //tambah data produk
-        DB::table('produk')->insert([
-            'kode'=>$request->kode,
-            'nama'=>$request->nama,
-            'harga_jual'=>$request->harga_jual,
-            'harga_beli'=>$request->harga_beli,
-            'stok'=>$request->stok,
-            'min_stok'=>$request->min_stok,
-            'jenis_produk_id'=>$request->jenis_produk_id,
-        ]);
-        return redirect('admin/produk');
+        //
     }
 
     /**
