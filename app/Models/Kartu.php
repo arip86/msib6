@@ -12,6 +12,8 @@ class Kartu extends Model
 
     protected $fillable = ['kode', 'nama', 'diskon','iuran'];
 
+    public $timestamps = false;
+
     public function pelanggan(){
         return $this->hasMany(Pelanggan::class);
     }

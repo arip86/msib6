@@ -44,5 +44,6 @@ Route::resource('produk', ProdukController::class);
 Route::resource('pelanggan', PelangganController::class);
 
 Route::get('/kartu', [KartuController::class, 'index']);
+Route::post('/kartu/store', [KartuController::class, 'store']);
 
 });

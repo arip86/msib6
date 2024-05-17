@@ -2,7 +2,7 @@
 @section('konten')
 
 <div class="container-fluid px-4">
-                        <h1 class="mt-4">Jenis Produk</h1>
+                        <h1 class="mt-4">Data Produk</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
                             <li class="breadcrumb-item active">Tables</li>
@@ -29,6 +29,7 @@
                                             <th>Stok</th>
                                             <th>Minimal Stok</th>
                                             <th>Jenis Produk</th>
+                                            <th>Action</th>
 
                                         </tr>
                                     </thead>
@@ -41,6 +42,7 @@
                                             <th>Stok</th>
                                             <th>Minimal Stok</th>
                                             <th>Jenis Produk</th>
+                                            <th>Action</th>
                                     </tfoot>
                                     <tbody>
                                         
@@ -54,6 +56,11 @@
                                             <td>{{$p->stok}}</td>
                                             <td>{{$p->min_stok}}</td>
                                             <td>{{$p->jenis}}</td>
+                                            <td>
+                                        <a href="{{route('produk.show', $p->id)}}" 
+                                        class="btn btn-sm btn-success">
+                                        Detail</a>
+                                            </td>
                                         </tr>
                                         @endforeach
                                     </tbody>

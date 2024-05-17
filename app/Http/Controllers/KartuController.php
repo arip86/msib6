@@ -31,7 +31,16 @@ class KartuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // menuliskan kode dengan karakteristik eloquent
+        //$kartu adalah variable, new adalah pendeklarasian kelas yang ada di model
+        //Kartu adalah class yang dari model
+        $kartu = new Kartu;
+        $kartu->kode = $request->kode;
+        $kartu->nama = $request->nama;
+        $kartu->diskon = $request->diskon;
+        $kartu->iuran = $request->iuran;
+        $kartu->save();
+        return redirect('admin/kartu');
     }
 
     /**
