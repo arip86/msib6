@@ -52,7 +52,10 @@ class PelangganController extends Controller
      */
     public function show(string $id)
     {
-        //
+        //show eloquent
+        $pelanggan = Pelanggan::find($id);
+        // dd($pelanggan);
+        return view('admin.pelanggan.detail', compact('pelanggan'));
     }
 
     /**

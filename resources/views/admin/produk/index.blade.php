@@ -59,7 +59,7 @@
                                             <td>
                                         <a href="{{route('produk.show', $p->id)}}" 
                                         class="btn btn-sm btn-success">
-                                        Detail</a>
+                                        <i class="fa-solid fa-eye"></i></a>
                                             </td>
                                         </tr>
                                         @endforeach
