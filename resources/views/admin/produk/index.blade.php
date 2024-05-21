@@ -27,7 +27,7 @@
                                             <th>Harga Beli</th>
                                             <th>Harga Jual</th>
                                             <th>Stok</th>
-                                            <th>Minimal Stok</th>
+                                            
                                             <th>Jenis Produk</th>
                                             <th>Action</th>
 
@@ -40,7 +40,7 @@
                                             <th>Harga Beli</th>
                                             <th>Harga Jual</th>
                                             <th>Stok</th>
-                                            <th>Minimal Stok</th>
+                                           
                                             <th>Jenis Produk</th>
                                             <th>Action</th>
                                     </tfoot>
@@ -54,12 +54,14 @@
                                             <td>{{$p->harga_beli}}</td>
                                             <td>{{$p->harga_jual}}</td>
                                             <td>{{$p->stok}}</td>
-                                            <td>{{$p->min_stok}}</td>
+                                           
                                             <td>{{$p->jenis}}</td>
                                             <td>
                                         <a href="{{route('produk.show', $p->id)}}" 
                                         class="btn btn-sm btn-success">
                                         <i class="fa-solid fa-eye"></i></a>
+                                        <a href="{{route('produk.edit', $p->id)}}" 
+                                        class="btn btn-sm btn-warning">edit</a>
                                             </td>
                                         </tr>
                                         @endforeach

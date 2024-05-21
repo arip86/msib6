@@ -25,8 +25,8 @@
                                             <th>Kode</th>
                                             <th>Nama</th>
                                             <th>Jenis Kelamin</th>
-                                            <th>Tempat Lahir</th>
-                                            <th>Tanggal Lahir</th>
+                                            
+                                            
                                             <th>Email</th>
                                             <th>Kartu</th>
                                             <th>Action</th>
@@ -39,8 +39,8 @@
                                             <th>Kode</th>
                                             <th>Nama</th>
                                             <th>Jenis Kelamin</th>
-                                            <th>Tempat Lahir</th>
-                                            <th>Tanggal Lahir</th>
+                                            
+                                           
                                             <th>Email</th>
                                             <th>Kartu</th>
                                             <th>Action</th>
@@ -53,14 +53,16 @@
                                             <td>{{$p->kode}}</td>
                                             <td>{{$p->nama}}</td>
                                             <td>{{$p->jk}}</td>
-                                            <td>{{$p->tmp_lahir}}</td>
-                                            <td>{{$p->tgl_lahir}}</td>
+                                          
+                                            
                                             <td>{{$p->email}}</td>
                                             <td>{{$p->kartu->nama}}</td>
                                             <td>
                                         <a href="{{route('pelanggan.show', $p->id)}}" 
                                         class="btn btn-sm btn-success">
                                         <i class="fa-solid fa-eye"></i></a>
+                                        <a href="{{route('pelanggan.edit', $p->id)}}"
+                                        class="btn btn-sm btn-warning">Edit</a>
                                             </td>
                                         </tr>
                                         @endforeach

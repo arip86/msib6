@@ -418,7 +418,9 @@ b, strong {
         <div class="col-md-5">
             <div class="project-info-box mt-0">
                 <h5>DETAILS PRODUK</h5>
-                <p class="mb-0">Vivamus pellentesque, felis in aliquam ullamcorper, lorem tortor porttitor erat, hendrerit porta nunc tellus eu lectus. Ut vel imperdiet est. Pellentesque condimentum, dui et blandit laoreet, quam nisi tincidunt tortor.</p>
+                <p class="mb-0">
+                  {{$p->deskripsi}}
+                </p>
             </div><!-- / project-info-box -->
 
             <div class="project-info-box">

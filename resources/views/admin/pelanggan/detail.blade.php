@@ -88,11 +88,10 @@ p {
     <div class="row justify-content-center">
         <div class="col-md-7 col-lg-4 mb-5 mb-lg-0 wow fadeIn">
             <div class="card border-0 shadow">
-            @empty($p->foto)  
-
+            @empty($pelanggan->foto)
                 <img src="{{url('admin/image/nophoto.jpg')}}" alt="...">
             @else 
-            <img src="{{url('admin/image')}}/{{$p->foto}}" alt="...">
+            <img src="{{url('admin/image')}}/{{$pelanggan->foto}}" alt="...">
             @endempty
 
                 <div class="card-body p-1-9 p-xl-5">
