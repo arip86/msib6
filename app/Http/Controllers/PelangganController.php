@@ -123,5 +123,9 @@ class PelangganController extends Controller
     public function destroy(string $id)
     {
         //
+        $pelanggan = Pelanggan::find($id);
+        $pelanggan->delete();
+
+        return redirect('admin/pelanggan');
     }
 }

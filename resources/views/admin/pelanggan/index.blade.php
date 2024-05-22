@@ -27,7 +27,7 @@
                                             <th>Jenis Kelamin</th>
                                             
                                             
-                                            <th>Email</th>
+                                          
                                             <th>Kartu</th>
                                             <th>Action</th>
                                            
@@ -41,7 +41,7 @@
                                             <th>Jenis Kelamin</th>
                                             
                                            
-                                            <th>Email</th>
+                                          
                                             <th>Kartu</th>
                                             <th>Action</th>
                                     </tfoot>
@@ -55,14 +55,44 @@
                                             <td>{{$p->jk}}</td>
                                           
                                             
-                                            <td>{{$p->email}}</td>
+                                            
                                             <td>{{$p->kartu->nama}}</td>
                                             <td>
                                         <a href="{{route('pelanggan.show', $p->id)}}" 
                                         class="btn btn-sm btn-success">
                                         <i class="fa-solid fa-eye"></i></a>
                                         <a href="{{route('pelanggan.edit', $p->id)}}"
-                                        class="btn btn-sm btn-warning">Edit</a>
+                                        class="btn btn-sm btn-warning">
+                                        <i class="fa-solid fa-pen-to-square"></i></a>
+                                    <!-- ini untuk modal hapus -->
+                                        <!-- Button trigger modal -->
+<button type="button" class="btn btn-danger btn-sm" 
+data-bs-toggle="modal" data-bs-target="#exampleModal{{$p->id}}">
+<i class="fa-solid fa-trash-can"></i>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal{{$p->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Hapus Produk</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Apakah anda yakin akan menghapus data {{$p->nama}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+        <form action="{{ route('pelanggan.destroy', $p->id) }}"
+         method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+        <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+
+                              
                                             </td>
                                         </tr>
                                         @endforeach
