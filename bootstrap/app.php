@@ -12,6 +12,8 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         //
+        \RealRashid\SweetAlert\ToSweetAlert::class;
+
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

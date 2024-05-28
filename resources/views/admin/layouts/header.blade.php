@@ -11,8 +11,10 @@
         <link href="{{asset('admin')}}/css/styles.css" rel="stylesheet" />
        {{-- <link href="{{asset('admin/css/styles.css')}}" rel="stylesheet" /> --}}
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
     <body>
+    @include('sweetalert::alert')
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3" href="index.html">Start Bootstrap</a>

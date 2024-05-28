@@ -5,6 +5,7 @@ use App\Http\Controllers\JenisProdukController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\KartuController;
 use App\Http\Controllers\PelangganController;
+use App\Http\Controllers\DashboardController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -28,17 +29,18 @@ Route::get('/daftar_nilai', function(){
     //return view yang mengarahkan kedalam view yang didalamnya ada folder nilai dan file daftar_nilai
     return view('nilai.daftar_nilai');
 });
-Route::get('/dashboard', function(){
-    return view ('admin.dashboard');
-});
+// Route::get('/dashboard', function(){
+//     return view ('admin.dashboard');
+// });
 
 //prefix and grouping adalah mengelompokkan routing ke satu jenis route
 Route::prefix('admin')->group(function(){
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+//route by name adalah routing yang diberikan penamaan untuk kemudian dipanggil di link
     // route memanggil controller setiap fungsi,
     // (nanti linknya menggunakn url, ada didalam view)
 Route::get('/jenis_produk', [JenisProdukController::class, 'index']);
 Route::post('/jenis_produk/store', [JenisProdukController::class, 'store']);
-
 // route dengan pemanggilan class
 Route::resource('produk', ProdukController::class);
 Route::resource('pelanggan', PelangganController::class);
