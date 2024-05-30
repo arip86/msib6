@@ -32,7 +32,9 @@ Route::get('/daftar_nilai', function(){
 // Route::get('/dashboard', function(){
 //     return view ('admin.dashboard');
 // });
-
+//middleware berguna sebagai pembatas atau validasi antara visitor yang 
+//sudah memiliki user akses dan belum memiliki akses 
+Route::group(['middleware' => ['auth', 'role:admin|manager|staff']], function(){
 //prefix and grouping adalah mengelompokkan routing ke satu jenis route
 Route::prefix('admin')->group(function(){
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -49,3 +51,8 @@ Route::get('/kartu', [KartuController::class, 'index']);
 Route::post('/kartu/store', [KartuController::class, 'store']);
 
 });
+});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
