@@ -7,13 +7,15 @@ use App\Http\Controllers\KartuController;
 use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\BerandaController;
 
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/', function(){
-    return view('front.home');
-});
+// Route::get('/', function(){
+//     return view('front.home');
+// });
+Route::get('/', [BerandaController::class, 'index']);
 //contoh routing untuk mengarahkan ke view, tanpa melalui controller
 Route::get('/percobaan_pertama', function(){
     return view('hello');
@@ -42,6 +44,8 @@ Route::get('/user', [UserController::class, 'index']);
 Route::post('/user/{user}/activate', 
 [UserController::class, 'activate'])->name('admin.user.activate');
 Route::get('/profile', [UserController::class, 'showProfile']);
+Route::patch('profile/{id}', [UserController::class, 'update']);
+//patch atau put dua syntax yang sama untuk digunakan sebagai pengubah data
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 //route by name adalah routing yang diberikan penamaan untuk kemudian dipanggil di link
     // route memanggil controller setiap fungsi,
