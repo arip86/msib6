@@ -37,6 +37,14 @@
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View Details</a></div>
                             </div>
+                            @auth
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center">
+                                    <a class="btn btn-outline-dark mt-auto"
+                                     href="{{route('add.to.cart', $p->id)}}">
+                                        Add To Cart</a></div>
+                            </div>
+                            @endauth
                         </div>
                     </div>
                     @endforeach
