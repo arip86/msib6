@@ -38,4 +38,27 @@ class BerandaController extends Controller
     session()->put('cart', $cart);
     return redirect()->back()->with('success', 'Produk Berhasil ditambahkan ke Cart');
     }
+    public function detail($id){
+        $produk = Produk::join('jenis_produk', 'jenis_produk_id', '=', 'jenis_produk.id')
+        ->select('produk.*', 'jenis_produk.nama as jenis')
+        ->where('produk.id', $id)
+        ->get();
+
+        return view('front.detail', compact('produk'));
+    }
+    public function cart(){
+        //panggil detail produk yang sudah masuk kedalam cart
+        $produk = Produk::all();
+        $cart = session()->get('cart');
+        //hitung total harga 
+        $total = 0;
+        if($cart){
+            foreach($cart as $key => $produk){
+                $total += $produk['harga_jual'] * $produk['quantity'];
+
+            }
+            return view ('front.shop_cart', compact('produk', 'cart', 'total'));
+        }
+        return view('front.home', compact('produk'));
+    }
 }
