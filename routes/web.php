@@ -17,6 +17,8 @@ use App\Http\Controllers\BerandaController;
 // });
 Route::get('/', [BerandaController::class, 'index']);
 Route::get('add-to-cart/{id}', [BerandaController::class, 'addToCart'])->name('add.to.cart');
+Route::get('/detail_cart/{id}', [BerandaController::class, 'detail']);
+Route::get('/shop_cart', [BerandaController::class, 'cart']);
 //contoh routing untuk mengarahkan ke view, tanpa melalui controller
 Route::get('/percobaan_pertama', function(){
     return view('hello');
