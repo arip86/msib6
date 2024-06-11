@@ -19,6 +19,8 @@ Route::get('/', [BerandaController::class, 'index']);
 Route::get('add-to-cart/{id}', [BerandaController::class, 'addToCart'])->name('add.to.cart');
 Route::get('/detail_cart/{id}', [BerandaController::class, 'detail']);
 Route::get('/shop_cart', [BerandaController::class, 'cart']);
+Route::patch('/update-cart', [BerandaController::class, 'update'])->name('update.cart');
+Route::delete('/remove-from-cart', [BerandaController::class, 'remove'])->name('remove.from.cart');
 //contoh routing untuk mengarahkan ke view, tanpa melalui controller
 Route::get('/percobaan_pertama', function(){
     return view('hello');
